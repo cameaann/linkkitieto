@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Links</title>
+</head>
+<body>
+  <h1>Links</h1>
+  <ul th:each = "link : ${links}">
+    <li th:text="${link.title}"></li>
+  </ul>
+
+  <form th:action="@{/}" method="POST">
+      <span>Name:</span>
+      <input type="text" name="title"/>
+      <input type="submit" value="Add!"/>
+  </form>
+
+
+
+</body>
+</html>
