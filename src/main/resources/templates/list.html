@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Links</title>
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+  <h1>Linkit</h1>
+  <table>
+      <thead>
+        <tr>
+            <td>Otsikko</td>
+            <td>Url</td>
+            <td>Kuvaus</td>
+            <td>Avainsana</td>
+            <td>Laita pois</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="link : ${links}">
+            <td th:text="${link.title}"></td>
+            <td><a th:class="link" th:href="${link.url}" th:text="${link.url}" target = "blank"></a></td>
+            <td th:text="${link.description}"></td>
+            <td th:text="${link.keyword}"></td>
+            <td>
+<!--                <button th:onclick="'deleteLink(' + ${link.id} + ')'">Delete</button>-->
+                <form th:action="@{/list/{id}/delete(id=${link.id})}"
+                      th:method="delete">
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+      </tbody>
+  </table>
+  <div th:class="container">
+    <a th:class="btn" th:href = "@{/}">Takaisin valikkoon</a>
+    <a th:class="btn" th:href = "@{/addLink}">Lisää linkki</a>
+  </div>
+
+  <script>
+    function deleteLink(linkId) {
+        console.log("deleteLink", arguments)
+        if (linkId) {
+            fetch(`/list/${linkId}`, {
+                method: "DELETE",
+                redirect: "manual"
+            })
+                .then(() => location.reload())
+                .catch(err => console.log("Link deletion error", err));
+        }
+    }
+  </script>
+
+</body>
+</html>

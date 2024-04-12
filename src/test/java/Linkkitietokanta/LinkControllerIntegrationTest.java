@@ -17,7 +17,7 @@ public class LinkControllerIntegrationTest {
 
     @Test
     void addLink_should_add_link_to_repository() {
-        linkController.addLink("test link");
+        linkController.addLink("test link", "https://test.com", "test", "test");
 
         List<Link> links = linkRepository.findAll();
         Assertions.assertEquals(1, links.size());

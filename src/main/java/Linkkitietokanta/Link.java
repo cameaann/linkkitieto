@@ -12,4 +12,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Data
 public class Link extends AbstractPersistable<Long> {
     private String title;
+    private String url;
+    private String description;
+    private String keyword;
 }

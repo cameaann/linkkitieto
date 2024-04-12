@@ -2,21 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Links</title>
+    <title>Menu</title>
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
 </head>
 <body>
-  <h1>Links</h1>
-  <ul th:each = "link : ${links}">
-    <li th:text="${link.title}"></li>
-  </ul>
 
-  <form th:action="@{/}" method="POST">
-      <span>Name:</span>
-      <input type="text" name="title"/>
-      <input type="submit" value="Add!"/>
-  </form>
-
-
+    <div th:class="wrap-container">
+        <h1>Tervetuloa Linkkitietokantaan</h1>
+        <div th:class="container">
+            <a th:class="btn" th:href = "@{/list}">Näytä linkit</a>
+            <a th:class="btn" th:href="@{/addLink}">Lisää linkki</a>
+        </div>
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,92 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: Arial, "sans-serif";
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    background-color: azure;
+}
+h1{
+    color:darkslategray;
+    text-align: center;
+    margin-block-start: 5rem;
+}
+.wrap-container{
+    width:60rem;
+    border:2px dotted darkslategray;
+    margin: 20rem auto;
+}
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 30rem;
+    margin: 5rem auto;
+}
+
+.btn{
+    cursor: pointer;
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: darkslategray;
+    background-color: azure;
+    border: 1px solid darkslategray;
+    border-radius: 2px;
+}
+
+.addBtn{
+    width:10rem;
+    justify-self: center;
+    display: block;
+    padding: 1rem;
+    background-color: lightseagreen;
+    margin-block-start: 5rem;
+    color: azure;
+    border:none;
+    border-radius: 2px;
+    font-weight: bold;
+}
+.addBtn:hover{
+    cursor: pointer;
+}
+
+table{
+    width: 100rem;
+    border: 1px solid darkslategray;
+    border-collapse: collapse;
+    margin: 5rem auto;
+}
+thead{
+    background-color: darkslategray;
+    color: azure;
+}
+td{
+    padding: 1rem;
+}
+
+td>a.link:hover{
+    cursor: pointer;
+}
+
+.addLinkForm{
+    width:40rem;
+    display: flex;
+    flex-direction: column;
+    margin:5rem auto;
+    margin-block-end: 10rem;
+    align-items: center;
+}
+.formfield{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: 2rem;
+}
+.formfield>input{
+    flex-basis: 70%;
+    height:2rem;
+}

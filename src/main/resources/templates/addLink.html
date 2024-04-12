@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add link</title>
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Lisää linkki</h1>
+    <form th:class="addLinkForm" th:action="@{/addLink}" method="POST">
+        <div th:class="formfield">
+            <label for="title">Otsikko:</label>
+            <input type="text" name="title" id = "title"/>
+        </div>
+        <div th:class="formfield">
+            <label for="url">Linkki:</label>
+            <input type="text" name="url" id = "url"/>
+        </div>
+        <div th:class="formfield">
+            <label for="description">Kuvaus:</label>
+            <input type="text" name="description" id = "description"/>
+        </div>
+        <div th:class="formfield">
+            <label for="keyword">Avainsana:</label>
+            <input type="text" name="keyword" id = "keyword"/>
+        </div>
+        <input th:class="addBtn" type="submit" value="Lisää"/>
+    </form>
+
+    <div th:class="container">
+        <a th:class="btn" th:href = "@{/}">Takaisin valikkoon</a>
+        <a th:class="btn" th:href = "@{/list}">Näytä linkit</a>
+    </div>
+</body>
+</html>
